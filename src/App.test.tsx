@@ -1,18 +1,11 @@
-// Imports
-import { render } from '@testing-library/react'
+import { describe, expect, test } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import App from '@/App'
 
-// To Test
-import App from './App'
+describe('App test', () => {
+  test('Should render App', () => {
+    render(<App />)
 
-// Tests
-test('Renders main page correctly', () => {
-  // Setup
-  render(<App />)
-
-  // Pre Expecations
-
-  // Init
-
-  // Post Expectations
-  expect(true).toBeTruthy()
+    expect(screen.getByText('Hello World')).not.toBeNull()
+  })
 })
